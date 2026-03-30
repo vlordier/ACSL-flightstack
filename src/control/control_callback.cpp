@@ -77,6 +77,11 @@ void MultiThreadedNode::controller_callback()
                             control_->getTimeStepRK4());
                             // control_->getErrorIntegrator().xerr); // Add this param if you want to estimate the error
 
+  if constexpr (ControlType::has_post_integration_algorithm_)
+  {
+    control_->postIntegrationAlgorithm(this->time_current_.load());
+  }
+
   // End time of the RK4 integration/Control algorithm
   auto end_time_rk4_integration = std::chrono::high_resolution_clock::now();
   // Updating the execution time of the RK4 integration/Control algorithm

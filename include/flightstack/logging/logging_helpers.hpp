@@ -38,6 +38,35 @@
 
 #include <Eigen/Dense>
 
+// Struct that contains info related to the logger that can be accessed via a getter from the logger class.
+struct LoggingInfo
+{
+  std::string timestamp;             // YYYYMMDD_HHMMSS
+  std::string date;                  // YYYYMMDD
+
+  std::string base_dir;              // ./src/flightstack/log/<date>/<controller>
+
+  std::string logs_dir;
+  std::string log_filename;
+
+  std::string gains_dir;
+  std::string gains_target_filename;
+
+  std::string info_dir;
+  std::string safe_mech_dir;
+  std::string safe_mech_target_filename;
+  std::string git_info_dir;
+  std::string git_info_filename;
+  std::string low_pass_filter_dir;
+  std::string low_pass_filter_filename;
+
+  std::string der_gains_dir;
+  std::string der_gains_filename;
+
+  std::string logs_debug_dir;
+  std::string log_debug_filename;
+};
+
 
 // Helper function to log a matrix in column-major order
 template<typename Derived>
