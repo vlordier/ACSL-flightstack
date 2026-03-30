@@ -57,6 +57,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/config)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/control)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/control/funnel_two_layer_mrac)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/control/hybrid_two_layer_mrac)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/control/mrac)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/control/pid)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/flightstack/control/two_layer_mrac)
@@ -75,6 +76,8 @@ set(SOURCES
   src/control/outer_loop_safety_mechanism.cpp
   src/control/funnel_two_layer_mrac/funnel_two_layer_mrac.cpp
   src/control/funnel_two_layer_mrac/logging_funnel_two_layer_mrac.cpp
+  src/control/hybrid_two_layer_mrac/hybrid_two_layer_mrac.cpp
+  src/control/hybrid_two_layer_mrac/logging_hybrid_two_layer_mrac.cpp
   src/control/mrac/logging_mrac.cpp
   src/control/mrac/mrac.cpp
   src/control/pid/logging_pid.cpp

@@ -242,6 +242,8 @@ public:
     return K_hat_state_dot;
   }
 
+  inline static constexpr bool has_post_integration_algorithm_ = false;
+
 protected:
 
   VehicleInfo vehicle_info;

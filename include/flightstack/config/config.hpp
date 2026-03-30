@@ -53,9 +53,10 @@ class MultiThreadedNode;
 #define __MRAC__ 2
 #define __TWO_LAYER_MRAC__ 3
 #define __FUNNEL_TWO_LAYER_MRAC__ 4
+#define __HYBRID_TWO_LAYER_MRAC__ 5
 
 // SELECT here the CONTROLLER you want to run -----------------------------------------------------------------------
-#define SELECTED_CONTROLLER __FUNNEL_TWO_LAYER_MRAC__
+#define SELECTED_CONTROLLER __HYBRID_TWO_LAYER_MRAC__
 // ------------------------------------------------------------------------------------------------------------------
 
 // Define ControlType based on SELECTED_CONTROLLER using type aliasing
@@ -82,6 +83,12 @@ using ControlType = TwoLayerMRAC;
 #include "funnel_two_layer_mrac.hpp"
 #include "logging_funnel_two_layer_mrac.hpp"
 using ControlType = FunnelTwoLayerMRAC;
+
+#elif SELECTED_CONTROLLER == __HYBRID_TWO_LAYER_MRAC__
+
+#include "hybrid_two_layer_mrac.hpp"
+#include "logging_hybrid_two_layer_mrac.hpp"
+using ControlType = HybridTwoLayerMRAC;
 
 #else
 #error "ERROR: Unsupported controller type selected."

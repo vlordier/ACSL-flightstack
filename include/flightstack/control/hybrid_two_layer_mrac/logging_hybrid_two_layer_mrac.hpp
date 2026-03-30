@@ -23,13 +23,13 @@
  **********************************************************************************************************************/
 
 /***********************************************************************************************************************
- * File:        logging_funnel_two_layer_mrac.hpp
+ * File:        logging_hybrid_two_layer_mrac.hpp
  * Author:      Mattia Gramuglia
- * Date:        December 04, 2024
+ * Date:        February 25, 2026
  * For info:    Andrea L'Afflitto 
  *              a.lafflitto@vt.edu
  * 
- * Description: Logger for the FunnelTwoLayerMRAC controller.
+ * Description: Logger for the HybridTwoLayerMRAC controller.
  * 
  * GitHub:    https://github.com/andrealaffly/ACSL-flightstack.git
  **********************************************************************************************************************/
@@ -83,10 +83,10 @@ namespace keywords = boost::log::keywords;
 // Forward declaration of MultiThreadedNode class
 class MultiThreadedNode;
 
-// Forward declaration of FunnelTwoLayerMRAC class
-class FunnelTwoLayerMRAC;
+// Forward declaration of HybridTwoLayerMRAC class
+class HybridTwoLayerMRAC;
 
-class LogData_FunnelTwoLayerMRAC
+class LogData_HybridTwoLayerMRAC
 {
 public:
 
@@ -94,7 +94,7 @@ public:
   static src::logger logger_logdata;
 
 	// Constructor
-  LogData_FunnelTwoLayerMRAC(MultiThreadedNode& node, FunnelTwoLayerMRAC& controller);
+  LogData_HybridTwoLayerMRAC(MultiThreadedNode& node, HybridTwoLayerMRAC& controller);
 
   void logInitializeHeaders();
   void logInitializeLogging();
@@ -116,7 +116,7 @@ private:
 
 	MultiThreadedNode& node_;
 
-  FunnelTwoLayerMRAC& controller_;
+  HybridTwoLayerMRAC& controller_;
 
   LoggingInfo logging_info_;
 	
